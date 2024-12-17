@@ -11,3 +11,26 @@ a {
 ul {
     list-style: none;
 }
+
+body::-webkit-scrollbar-track{
+    background-color: #c08057;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #c08057;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #c08057;
+}

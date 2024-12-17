@@ -1,9 +1,9 @@
 body {
-  font-family: "Outfit", sans-serif;
   background-image: url(../imagens/fundo-site.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  font-family: 'Georgia', serif;
 }
 
 .cabecalho {
@@ -18,12 +18,7 @@ body {
   color: #f1ecff;
 }
 
-.cabecalho .pokebola {
-  width: 25px;
-  height: 25px;
-}
-
-.pokemon-slider {
+.slider {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,9 +26,9 @@ body {
   margin: 60px 0;
 }
 
-.lista-pokemons {
+.lista-personagens {
   width: 325px;
-  height: 520px;
+  height: 500px;
   position: relative;
 }
 
@@ -70,6 +65,7 @@ body {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 10px;
   transition: opacity 0.3s ease-in-out;
+  gap: 8px;
 }
 
 .cartao.selecionado {
@@ -77,67 +73,77 @@ body {
   z-index: 1;
 }
 
-.cartao .informacoes {
-  background-color: rgba(179, 177, 185, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.cartao .nome {
+    font-size: 13px;
+    padding: 5px;
+    padding-left: 15px;
+    /* text-align: center; */
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #c4a57a, #b58e5c);
+    border: 2px solid #a67c52;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3), 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
 }
 
-.cartao .informacoes .nome {
-  color: white;
-  font-size: 20px;
-  text-align: center;
+.cartao .nivel-carta {
+    background-image: url(../imagens/nivel-carta.png);
+    height: 20px;
+    background-repeat: repeat-x;
+    background-size: 20px 20px;
+    margin-right: 15px;
+    align-self: flex-end;
 }
 
-.cartao .informacoes-ataque {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 10px;
+.nivel-carta[data-count="5"] {
+    width: calc(20px * 5);
 }
 
-.cartao .informacoes-ataque .ataque, .cartao .informacoes-ataque .defesa {
-  background-color: #333333;
-  color: white;
-  border-radius: 20px;
-  padding: 6px 10px;
-  font-size: 15px;
+.nivel-carta[data-count="3"] {
+    width: calc(20px * 3);
 }
 
-.cartao .container-imagem {
-  text-align: center;
+.nivel-carta[data-count="7"] {
+    width: calc(20px * 7);
 }
 
 .cartao .imagem-carta {
   max-width: 100%;
-  width: 310px;
-  height: 350px;
+  max-width: 270px;
+  align-self: center;
 }
 
-.cartao .descricao {
-  background: rgba(255, 255, 255, 0.8);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+
+.cartao .informacoes {
+    border-radius: 5px;
+    font-size: 14px;
+    max-width: 300px;
+    color: #000000;
+    background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
+    font-style: italic;
+    border: 1px solid #b69b7d;
+    box-shadow:
+            inset 2px 2px 6px rgba(0, 0, 0, 0.3),
+            2px 2px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    line-height: 1.5;
+
 }
 
-.cartao .descricao .titulo {
-  background-color: #333333;
-  font-size: 15px;
-  color: white;
-  border-radius: 20px;
-  padding: 6px 10px;
+.cartao .informacoes .descricao{
+    border-bottom: 1px solid #000000;
+    padding: 10px;
+    max-height: 95px;
+    overflow-y: scroll;
 }
 
-.cartao .descricao .texto {
-  font-size: 14px;
-  padding: 12px;
-  text-align: justify;
-  max-height: 115px;
-  overflow-y: auto;
+.cartao .informacoes .informacoes-ataque{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.cartao .informacoes .informacoes-ataque span{
+    font-size: 13px;
 }
 
 .cartao.virar {
@@ -145,7 +151,12 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
+.carta-virada{
+    display: none;
+}
+
 .fundo-carta {
+    display: block;
     background: url(../imagens/fundo-carta.jpg) no-repeat;
     background-size: cover;
     background-position: center;
@@ -161,3 +172,39 @@ body {
 .esconder{
     display: none;
 }
+
+.fundo{
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;  
+}
+
+.fundo-1{
+    background: url(../imagens/fundo-1.jpg) no-repeat;
+}
+
+.fundo-2{
+    background: url(../imagens/fundo-2.jpg) no-repeat;
+}
+.fundo-3{
+    background: url(../imagens/fundo-3.jpg) no-repeat;
+}
+.fundo-4{
+    background: url(../imagens/fundo-4.jpg) no-repeat;
+}
+.fundo-5{
+    background: url(../imagens/fundo-5.jpg) no-repeat;
+}
+.fundo-6{
+    background: url(../imagens/fundo-6.jpg) no-repeat;
+}
+.fundo-7{
+    background: url(../imagens/fundo-7.jpg) no-repeat;
+}
+
