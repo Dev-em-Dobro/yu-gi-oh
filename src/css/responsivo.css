@@ -2,9 +2,11 @@
     body{
         padding: 15px;
     }
-    .titulo{
+    
+    .cabecalho .titulo{
         font-size: 25px;
     }
+
     .slider{
         gap: 10px;
     }
@@ -21,10 +23,10 @@
         padding-top: 0;
     }
 
-    .titulo{
+    .cabecalho .titulo{
         font-size: 18px;
         text-align: center;
-        padding: 10px;
+        padding: 0;
     }
 
     .slider{
