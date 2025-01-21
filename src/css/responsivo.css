@@ -16,30 +16,39 @@
     body{
         background-position: center;
         overflow: hidden;
-        padding: 30px;
+        padding: 10px 0;
+        display: block;
     }
 
     .cabecalho{
-        padding-top: 0;
+        padding: 10px 0;
     }
 
     .cabecalho .titulo{
-        font-size: 18px;
         text-align: center;
         padding: 0;
+    }
+
+    .lista-personagens {
+        width: 250px;
+    }
+
+    .imagem-carta{
+        width: 100%;
     }
 
     .slider{
         position: relative;
         flex-direction: column-reverse;
-        margin: 15px 0;
+        margin: 5px 0;
     }
     .btn-seta{
         position: absolute;
-        bottom: -18%;
+        bottom: -13%;
         z-index: 2;
         margin-top: 10px;
     }
+
     #btn-avancar{
         right: 20%;
     }
