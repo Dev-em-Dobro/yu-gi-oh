@@ -1,76 +1,48 @@
-@media(max-width: 768px){
-    body{
-        padding: 15px;
-    }
-    
-    .cabecalho .titulo{
-        font-size: 25px;
-    }
+@media (max-width: 768px) {
+	body {
+		background-position: center;
+		padding: 0 15px;
+	}
 
-    .slider{
-        gap: 10px;
-    }
+	.slider {
+		gap: 10px;
+	}
 }
 
-@media(max-width: 425px){
-    body{
-        background-position: center;
-        overflow: hidden;
-        padding: 10px 0;
-        display: block;
-    }
+@media (max-width: 496px) {
+	.lista-personagens {
+		width: 250px;
+	}
 
-    .cabecalho{
-        padding: 10px 0;
-    }
+	.imagem-carta {
+		width: 100%;
+	}
 
-    .cabecalho .titulo{
-        text-align: center;
-        padding: 0;
-    }
+	.slider {
+		position: relative;
+	}
 
-    .lista-personagens {
-        width: 250px;
-    }
+	.btn-seta {
+		position: absolute;
+		bottom: -14%;
+	}
 
-    .imagem-carta{
-        width: 100%;
-    }
+	#btn-avancar {
+		right: 20%;
+	}
+	#btn-voltar {
+		left: 20%;
+	}
+}
 
-    .slider{
-        position: relative;
-        flex-direction: column-reverse;
-        margin: 5px 0;
-    }
-    .btn-seta{
-        position: absolute;
-        bottom: -13%;
-        z-index: 2;
-        margin-top: 10px;
-    }
+@media (max-width: 375px) {
+	body {
+		gap: 10px;
+		justify-content: start;
+		padding-top: 10px;
+	}
 
-    #btn-avancar{
-        right: 20%;
-    }
-    #btn-voltar{
-        left: 20%;
-    }
-
-    .cartao {
-        perspective: 1000px; /* Adiciona a perspectiva para o efeito 3D */
-    }
-    
-    .carta-virada {
-        transform-origin: center; /* Define o ponto de virada */
-        transition: transform 0.6s ease;
-    }
-    
-    .cartao.virar {
-        transform: rotateY(180deg); /* Altera para efeito flip */
-        transition: transform 0.6s ease;
-    }
-
-    .fundo-carta {
-        backface-visibility: hidden;  /* Esconde o lado inverso da carta */
-    }
+	.cabecalho {
+		font-size: 12px;
+	}
 }
